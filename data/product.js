@@ -1,12 +1,85 @@
-const products = {
-	{
-		name: "Monitor geming",
-		price: 4999999,
-		description: "Monitor geming ini sangat bagus o",
-		rating: 4.3,
-		soldCount: 579,
-		isSold: false
-	}
-}
+const products = [
+  {
+    name: "MSI Modern 14 C12MO",
+    price: 7799000,
+    description: 'i5-1235U 512GB Iris Xe Graphics 14" FHD IPS-Level - 8GB',
+    rating: 4.9,
+    soldCount: 480,
+    isSold: false,
+    image: "../media/MSI Modern 14 C12MO.png",
+    quantity: 1,
+  },
+  {
+    name: "Fantech ATOM96 MK890",
+    price: 209000,
+    description: "RGB Keyboard Gaming Mechanical",
+    rating: 4.8,
+    soldCount: 1929,
+    isSold: false,
+    image: "../media/Fantech ATOM96 MK890.png",
+    quantity: 1,
+  },
+  {
+    name: "ADVAN Laptop Workplus",
+    price: 7089000,
+    description: "AMD RYZEN 5 6600H 14'' FHD IPS 16GB 512GB Win 11",
+    rating: 5,
+    soldCount: 389,
+    isSold: false,
+    image: "../media/ADVAN Laptop Workplus.jpeg",
+    quantity: 1,
+  },
+  {
+    name: "Memory KYO STYGIAN DDR4",
+    price: 490000,
+    description: "PC25600 3200Mhz 16GB 2x8GB Ram Dual Channel",
+    rating: 4.9,
+    soldCount: 129,
+    isSold: false,
+    image: "../media/Memory KYO STYGIAN DDR4.jpg",
+    quantity: 1,
+  },
+  {
+    name: "SSD M2 NVME Kaizen 1TB",
+    price: 7089000,
+    description: "1TB",
+    rating: 4.8,
+    soldCount: 111,
+    isSold: false,
+    image: "../media/SSD M2 NVME Kaizen 1TB.jpg",
+    quantity: 1,
+  },
+  {
+    name: "NOVA V4 Lightweight Wireless Gaming Mouse",
+    price: 359000,
+    description: "Wireless + Lightweight",
+    rating: 4.7,
+    soldCount: 144,
+    isSold: false,
+    image: "../media/NOVA V4 Lightweight Wireless Gaming Mouse.jpg",
+    quantity: 1,
+  },
+  {
+    name: "Lenovo V14 G3",
+    price: 5249000,
+    description: "i3 1215U 20GB 1TBssd 14 INCH FHD Win11",
+    rating: 4.8,
+    soldCount: 142,
+    isSold: false,
+    image: "../media/Lenovo V14 G3.jpg",
+    quantity: 1,
+  },
+  {
+    name: "ACER LAPTOP NITRO AN515-58-55E6",
+    price: 12999000,
+    description: "INTEL GEN12 i5-12500H",
+    rating: 4.8,
+    soldCount: 169,
+    isSold: false,
+    image: "../media/ACER LAPTOP NITRO AN515-58-55E6.jpg",
+    quantity: 1,
+  },
+];
+export default products;
 
-// ! BLM SELESAI JAN DIUBAH DULU
+// JANGAN DIUBAH

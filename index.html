@@ -1,448 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://meyerweb.com/eric/tools/css/reset/reset.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Comp Store</title>
-  </head>
 
-  <body>
-    <!-- Navigasi Mobile -->
-    <header class="mobile-nav">
-      <div class="menu-toggle">
-        <i class="bi bi-list"></i>
-      </div>
-      <div class="user-nav">
-        <a href="#search" class="search-icon" aria-label="Search">
-          <i class="bi bi-search"></i>
-        </a>
-        <a href="cart.html" class="cart-icon" aria-label="Shopping Cart">
-          <i class="bi bi-bag-fill"></i>
-        </a>
-        <a href="#profile" class="profile-icon" aria-label="User Profile">
-          <i class="bi bi-person-circle"></i>
-        </a>
-      </div>
-      <div class="menu-overlay">
-        <nav>
-          <a href="index.html"><i class="bi bi-laptop"></i> Home</a>
-          <a href="search.html"><i class="bi bi-compass"></i> Explore</a>
-        </nav>
-      </div>
-    </header>
-    <div class="menu-backdrop"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="icon.svg" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Comp Store</title>
+</head>
 
-    <!-- Navigasi Desktop -->
-    <header class="desktop-nav">
-      <a href="index.html" class="logo flex-center"
-        ><i class="bi bi-cpu"></i> Comp Store</a
-      >
+<body>
+  <!-- Navigasi Mobile -->
+  <header class="mobile-nav">
+    <div class="menu-toggle">
+      <i class="bi bi-list"></i>
+    </div>
+    <div class="user-nav">
+      <a href="#search" class="search-icon" aria-label="Search">
+        <i class="bi bi-search"></i>
+      </a>
+      <a href="/pages/cart.html" class="cart-icon-phone" aria-label="Shopping Cart">
+        <i class="bi bi-bag-fill"></i>
+      </a>
+      <a href="#profile" class="profile-icon" aria-label="User Profile">
+        <i class="bi bi-person-circle"></i>
+      </a>
+    </div>
+
+    <div class="menu-overlay">
       <nav>
-        <a href="index.html"><i class="bi bi-house-door-fill"></i> Home</a>
-        <a href="search.html"><i class="bi bi-box-fill"></i> Explore</a>
-        <form class="search-input" action="search.html">
-          <input type="text" name="search" placeholder="Search for your need" />
-          <button type="submit">
-            <i class="bi bi-search"></i>
-          </button>
-        </form>
+        <a href="index.html"><i class="bi bi-laptop"></i> Home</a>
+        <a href="/pages/search.html"><i class="bi bi-compass"></i> Explore</a>
       </nav>
-      <div class="user-nav">
-        <a href="cart.html">
-          <i class="bi bi-cart-fill"></i>
-        </a>
-      </div>
-    </header>
+    </div>
+  </header>
+  <div class="menu-backdrop"></div>
 
-    <section class="hero">
-      <div class="side-left">
-        <h2>Discover the latest tech products for your needs</h2>
-        <p>Explore top brands and special deals</p>
-        <div class="search-bar">
-          <!-- search-bar -->
-          <input
-            type="text"
-            name="search"
-            id="search-input"
-            placeholder="Search for your favorite tech gadget"
-          />
-          <button type="submit">GO</button>
-        </div>
+  <!-- Navigasi Desktop -->
+  <header class="desktop-nav">
+    <a href="index.html" class="logo flex-center">
+      <img class="icon" src="icon.svg" /> Comp Store
+    </a>
+    <nav>
+      <a href="index.html"><i class="bi bi-house-door-fill"></i> Home</a>
+      <a href="/pages/search.html"><i class="bi bi-box-fill"></i> Explore</a>
+      <form class="search-input" action="/pages/search.html">
+        <input type="text" name="search" placeholder="Search for your need" />
+        <button type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+    </nav>
+    <div class="user-nav">
+      <a href="/pages/profile.html" class="profile-icon" aria-label="User Profile">
+        <i class="bi bi-person-circle"><span>Pak Doel</span></i>
+      </a>
+      <a href="/pages/cart.html">
+        <i class="bi bi-cart-fill"></i>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="side-left">
+      <h2>Discover the latest tech products for your needs</h2>
+      <p>Explore top brands and special deals</p>
+      <div class="search-bar">
+        <!-- search-bar -->
+        <input type="text" name="search" id="search-input" placeholder="Search for your favorite tech gadget" />
+        <button type="submit">GO</button>
       </div>
-      <!-- image galerey image di sebalah kiri bang-->
-      <div class="side-right">
-        <div class="image-gallery">
-          <img src="images2.jpg" alt="Tech product 1" class="gallery-image" />
-          <img src="images3.jpg" alt="Tech product 2" class="gallery-image" />
-          <img src="images4.jpg" alt="Tech product 3" class="gallery-image" />
-        </div>
+    </div>
+    <!-- image gallery image di sebelah kanan -->
+    <div class="side-right">
+      <div class="image-gallery">
+        <img src="media/Lenovo V14 G3.jpg" alt="Lenovo V14 G3" class="gallery-image" />
+        <img src="media/ADVAN Laptop Workplus.jpeg" alt="ADVAN Laptop Workplus" class="gallery-image" />
+        <img src="media/NOVA V4 Lightweight Wireless Gaming Mouse.jpg" alt="NOVA V4 Wireless Mouse"
+          class="gallery-image" />
       </div>
-    </section>
-    <section class="categories">
-      <h2>Product Categories</h2>
-      <div class="container-box">
-        <ul>
-          <a>
+    </div>
+  </section>
+  <section class="categories">
+    <h2>Product Categories</h2>
+    <div class="container-box">
+      <ul>
+        <li>
+          <a href="#">
             <span>Gaming</span>
-            <span class="material-symbols-outlined"> sports_esports </span>
+            <span class="material-symbols-outlined">sports_esports</span>
           </a>
-          <a>
-            <span>smartphone</span>
-            <span class="material-symbols-outlined"> smartphone </span>
+        </li>
+        <li>
+          <a href="#">
+            <span>Smartphone</span>
+            <span class="material-symbols-outlined">smartphone</span>
           </a>
-          <a>
-            <span>headphones</span>
-            <span class="material-symbols-outlined"> headphones </span>
+        </li>
+        <li>
+          <a href="#">
+            <span>Headphones</span>
+            <span class="material-symbols-outlined">headphones</span>
           </a>
-          <a>
+        </li>
+        <li>
+          <a href="#">
             <span>Laptops</span>
-            <span class="material-symbols-outlined"> laptop_mac </span>
+            <span class="material-symbols-outlined">laptop_mac</span>
           </a>
-          <a>
-            <span>smart home</span>
-            <span class="material-symbols-outlined"> assistant_on_hub </span>
+        </li>
+        <li>
+          <a href="#">
+            <span>Smart Home</span>
+            <span class="material-symbols-outlined">assistant_on_hub</span>
           </a>
-          <a>
+        </li>
+        <li>
+          <a href="#">
             <span>Accessories</span>
-
-            <span class="material-symbols-outlined">
-              shopping_cart_checkout
-            </span>
+            <span class="material-symbols-outlined">shopping_cart_checkout</span>
           </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <main>
+    <!-- Notifikasi pop-up -->
+    <div id="notification" class="notification">
+      <p>
+        <i class="bi bi-check-circle-fill"></i>
+        <span id="notification-message"></span>
+      </p>
+    </div>
+
+    <aside>
+      <div class="title">
+        <p><i class="bi bi-laptop"></i>Hot Deals</p>
+      </div>
+      <div class="promo-card">
+        <p class="promo-product-name">Lorem</p>
+        <div class="promo-product-image">
+          <!-- image -->
+          <div class="promo-discount">50% OFF</div>
+        </div>
+        <button class="promo-button" onclick="window.location.href='cart.html'">
+          Buy
+        </button>
+      </div>
+      <div id="second-promo" class="promo-card">
+        <p class="promo-product-name">Lorem</p>
+        <div class="promo-product-image">
+          <!-- image -->
+          <div class="promo-discount">50% OFF</div>
+        </div>
+        <button onclick="window.location.href='cart.html'" class="promo-button">
+          Buy
+        </button>
+      </div>
+      <div class="hot-deals-countdown">
+        <h3 class="title">Hot Deals</h3>
+        <p>Ending soon</p>
+        <div class="countdown">
+          <span class="minute-1">1</span>
+          <span class="minute-2">1</span>
+          <span class="separator">:</span>
+          <span class="second-1">1</span>
+          <span class="second-2">1</span>
+        </div>
+      </div>
+    </aside>
+    <!-- trending gadgets -->
+    <section class="feed">
+      <div class="section-title">
+        <h2 class="title"><i class="bi bi-laptop"></i>Trending Gadgets</h2>
+        <!-- block -->
+        <button class="previous-trend">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="next-trend">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+      <!-- image rules phone not defined -->
+      <section class="product-list"></section>
+    </section>
+  </main>
+  <section class="Top-tech">
+    <div class="section-title">
+      <h2 class="title-tech"><i class="bi bi-laptop"></i>Top Tech Gadgets</h2>
+    </div>
+
+    <div class="container-gadget">
+      <div class="gadget-card">
+        <img src="media/Lenovo V14 G3.jpg" class="gadget-image" />
+        <div class="gadget-caption">
+          <h4 class="gadget-name">Lenovo V14 G3</h4>
+          <div class="gadget-price">Rp 5.249.000,00</div>
+        </div>
+      </div>
+      <div class="gadget-card">
+        <img src="media/Memory KYO STYGIAN DDR4.jpg" class="gadget-image" />
+        <div class="gadget-caption">
+          <h4 class="gadget-name">Memory KYO STYGIAN DDR4</h4>
+          <div class="gadget-price">Rp 5.249.000,00</div>
+        </div>
+      </div>
+      <div class="gadget-card">
+        <img src="media/Lenovo V14 G3.jpg" class="gadget-image" />
+        <div class="gadget-caption">
+          <h4 class="gadget-name">Lenovo V14 G3</h4>
+          <div class="gadget-price">Rp 5.249.000,00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer-end">
+    <div class="footer-container">
+      <div class="block-logo">
+        <div class="footer-section">
+          <h5>CPSTORE</h5>
+          <h6>
+            Marketplace teknologi terpercaya untuk semua kebutuhan Elektronik
+          </h6>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h5>Kategori</h5>
+        <ul>
+          <li><a href="#">Gaming</a></li>
+          <li><a href="#">Laptop</a></li>
+          <li><a href="#">Headphone</a></li>
+          <li><a href="#">Smartphone</a></li>
         </ul>
       </div>
-    </section>
-    <main>
-      <!-- buatkan pop up ketika menekan tombol add to cha-->
-      <!-- Notifikasi pop-up -->
-      <div id="notification" class="notification">
-        <p>
-          <i class="bi bi-check-circle-fill"></i>
-          <span id="notification-message"></span>
-        </p>
+      <div class="footer-section">
+        <h5>Layanan Pelanggan</h5>
+        <ul>
+          <li><a href="#">Cara Pembelian</a></li>
+          <li><a href="#">Pengiriman</a></li>
+          <li><a href="#">Pengembalian</a></li>
+          <li><a href="#">Hubungi Kami</a></li>
+        </ul>
       </div>
+      <div class="footer-section">
+        <h5>Ikuti Kami</h5>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2024 CPSTORE. Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="../scripts/fetchProduct.js"></script>
+</body>
 
-      <aside>
-        <div class="title">
-          <p><i class="bi bi-laptop"></i>Hot Deals</p>
-        </div>
-        <div class="promo-card">
-          <p class="promo-product-name">Lorem</p>
-          <div class="promo-product-image">
-            <!-- image -->
-            <div class="promo-discount">50% OFF</div>
-          </div>
-          <button
-            class="promo-button"
-            onclick="window.location.href='cart.html'"
-          >
-            Buy
-          </button>
-        </div>
-        <div id="second-promo" class="promo-card">
-          <p class="promo-product-name">Lorem</p>
-          <div class="promo-product-image">
-            <!-- image -->
-            <div class="promo-discount">50% OFF</div>
-          </div>
-          <button
-            onclick="window.location.href='cart.html'"
-            class="promo-button"
-          >
-            Buy
-          </button>
-        </div>
-        <div class="hot-deals-countdown">
-          <h3 class="title">Hot Deals</h3>
-          <p>Ending soon</p>
-          <div class="countdown">
-            <span class="minute-1">1</span>
-            <span class="minute-2">1</span>
-            <span class="separator">:</span>
-            <span class="second-1">1</span>
-            <span class="second-2">1</span>
-          </div>
-        </div>
-      </aside>
-      <!-- trending gedgets -->
-      <section class="feed">
-        <div class="section-title">
-          <h2 class="title"><i class="bi bi-laptop"></i>Trending Gadgets</h2>
-          <!-- block -->
-          <button class="previous-trend">
-            <i class="bi bi-chevron-left"></i>
-          </button>
-          <button class="next-trend">
-            <i class="bi bi-chevron-right"></i>
-          </button>
-        </div>
-        <!-- image rules phone not defined -->
-        <section class="product-list">
-          <div
-            class="product-card add-to-cart"
-            data-id="1"
-            data-name="Monitor Gaming"
-            data-price="4999999"
-          >
-            <div class="product-image img1s">
-              <!-- change this to image later -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">Monitor Gaming</h4>
-              <div class="product-price">Rp 4.999.999,00-</div>
-            </div>
-          </div>
-          <div
-            class="product-card add-to-cart"
-            data-id="2"
-            data-name="Keyboard Mekanik"
-            data-price="1500000"
-          >
-            <div class="product-image img2s">
-              <!-- change this to image later -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">Keyboard Mekanik</h4>
-              <div class="product-price">Rp 1.500.000,00-</div>
-            </div>
-          </div>
-          <div
-            class="product-card add-to-cart"
-            data-id="3"
-            data-name="Mouse Gaming"
-            data-price="799999"
-          >
-            <div class="product-image">
-              <!-- change this to image later -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">Mouse Gaming</h4>
-              <div class="product-price">Rp 799.999,00-</div>
-            </div>
-          </div>
-          <div
-            class="product-card add-to-cart"
-            data-id="4"
-            data-name="Headset Gaming"
-            data-price="1299999"
-          >
-            <div class="product-image img4s">
-              <!-- change this to image later -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">Headset Gaming</h4>
-              <div class="product-price">Rp 1.299.999,00-</div>
-            </div>
-          </div>
-          <div
-            class="product-card add-to-cart"
-            data-id="5"
-            data-name="SSD 1TB"
-            data-price="1799999"
-          >
-            <div class="product-image img5s">
-              <!-- change this to image later -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">SSD 1TB</h4>
-              <div class="product-price">Rp 1.799.999,00-</div>
-            </div>
-          </div>
-          <div
-            class="product-card add-to-cart"
-            data-id="6"
-            data-name="RAM 16GB"
-            data-price="999999"
-          >
-            <div class="product-image img6s">
-              <!-- change this to image later -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">RAM 16GB</h4>
-              <div class="product-price">Rp 999.999,00-</div>
-            </div>
-          </div>
-          <div
-            class="product-card add-to-cart"
-            data-id="7"
-            data-name="RAM 16GB"
-            data-price="999999"
-          >
-            <div class="product-image img6s">
-              <!-- change this to image later -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">RAM 16GB</h4>
-              <div class="product-price">Rp 999.999,00-</div>
-            </div>
-          </div>
-          <div
-            class="product-card add-to-cart"
-            data-id="8"
-            data-name="Processor Intel i7"
-            data-price="4999999"
-          >
-            <div class="product-image img6s">
-              <!-- image -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">Processor Intel i7</h4>
-              <div class="product-price">Rp 4.999.999,00-</div>
-            </div>
-          </div>
-          <div
-            class="product-card add-to-cart"
-            data-id="9"
-            data-name="Monitor 27 inch"
-            data-price="3499999"
-          >
-            <div class="product-image img6s">
-              <!-- image -->
-              <button class="add-to-cart-icon">
-                <i class="bi bi-cart-plus"></i>
-              </button>
-            </div>
-            <div class="product-caption">
-              <h4 class="product-name">Monitor 27 inch</h4>
-              <div class="product-price">Rp 3.499.999,00-</div>
-            </div>
-          </div>
-        </section>
-      </section>
-    </main>
-    <section class="Top-tech">
-      <div class="section-title">
-        <h2 class="title-tech"><i class="bi bi-laptop"></i>Top Tech Gadgets</h2>
-      </div>
-
-      <div class="container-gadget">
-        <section class="top-tech-gadgets">
-          <div class="gadget-card">
-            <div class="gadget-image">
-              <!-- image -->
-            </div>
-            <div class="gadget-caption">
-              <h4 class="gadget-name">Gaming</h4>
-              <div class="gadget-price">Free</div>
-            </div>
-          </div>
-        </section>
-        <section class="top-tech-gadgets">
-          <div class="gadget-card">
-            <div class="gadget-image">
-              <!-- image -->
-            </div>
-            <div class="gadget-caption">
-              <h4 class="gadget-name">Gaming</h4>
-              <div class="gadget-price">Free</div>
-            </div>
-          </div>
-        </section>
-        <section class="top-tech-gadgets">
-          <div class="gadget-card">
-            <div class="gadget-image">
-              <!-- image -->
-            </div>
-            <div class="gadget-caption">
-              <h4 class="gadget-name">Gaming</h4>
-              <div class="gadget-price">Free</div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <footer class="footer-end">
-      <div class="footer-container">
-        <div class="block-logo">
-          <div class="footer-section">
-            <h5>CPSTORE</h5>
-            <h6>
-              Marketplace teknologi terpercaya untuk semua kebutuhan Elektronik
-              Anda.
-            </h6>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h5>Kategori</h5>
-          <ul>
-            <li><a href="#">Gaming</a></li>
-            <li><a href="#">Laptop</a></li>
-            <li><a href="#">Headphone</a></li>
-            <li><a href="#">Smartphone</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h5>Layanan Pelanggan</h5>
-          <ul>
-            <li><a href="#">Cara Pembelian</a></li>
-            <li><a href="#">Pengiriman</a></li>
-            <li><a href="#">Pengembalian</a></li>
-            <li><a href="#">Hubungi Kami</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h5>Ikuti Kami</h5>
-          <div class="social-icons">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-twitter"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>2024 CPSTORE. Hak Cipta Dilindungi.</p>
-      </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
 </html>

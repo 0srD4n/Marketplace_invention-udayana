@@ -1,3 +1,5 @@
+import products from "../data/product.js";
+
 $(document).ready(function () {
   $(".quantity-btn").click(function () {
     var input = $(this).siblings(".quantity-input");
@@ -14,41 +16,22 @@ $(document).ready(function () {
   });
 });
 $(document).ready(function () {
-  const cartItems = [
-    {
-      id: 1,
-      name: "Gaming Laptop XYZ",
-      price: 15000000,
-      quantity: 1,
-      image: "path/to/image1.jpg",
-    },
-    {
-      id: 2,
-      name: "Mechanical Keyboard",
-      price: 1500000,
-      quantity: 1,
-      image: "path/to/image2.jpg",
-    },
-  ];
-
   function updateCart() {
-    const $cartItems = $("#cart-items");
-    $cartItems.empty();
+    const cartItemsDIV = $("#cart-items");
+    cartItemsDIV.empty();
 
     let total = 0;
 
-    cartItems.forEach((item) => {
-      const $cartItem = $(`
-          <div class="cart-item" data-id="${item.id}">
+    products.forEach((item) => {
+      const cartItemDIV = $(`
+          <div class="cart-item">
             <img src="${item.image}" alt="${item.name}" />
             <div class="item-details">
               <div class="item-name">${item.name}</div>
               <div class="item-price">Rp ${item.price.toLocaleString()}</div>
               <div class="item-quantity">
                 <button class="quantity-btn minus">-</button>
-                <input type="number" class="quantity-input" value="${
-                  item.quantity
-                }" min="1" />
+                <input type="number" class="quantity-input" value="1" min="1" />
                 <button class="quantity-btn plus">+</button>
               </div>
             </div>
@@ -56,7 +39,7 @@ $(document).ready(function () {
           </div>
         `);
 
-      $cartItems.append($cartItem);
+      cartItemsDIV.append(cartItemDIV);
       total += item.price * item.quantity;
     });
 
@@ -90,3 +73,14 @@ $(document).ready(function () {
 
   updateCart();
 });
+function showNotification(message) {
+  const notification = document.getElementById("notification");
+  const notificationMessage = document.getElementById("notification-message");
+  notificationMessage.textContent = message;
+  notification.style.display = "block";
+
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 3000);
+}
+

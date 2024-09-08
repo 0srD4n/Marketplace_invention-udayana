@@ -1,4 +1,4 @@
-// mobile nav
+// Komentar: Navigasi mobile
 function toggleMobileMenu() {
   document.querySelector(".menu-overlay").classList.toggle("active");
   document.querySelector(".menu-backdrop").classList.toggle("active");
@@ -18,6 +18,7 @@ document.querySelectorAll(".menu-overlay nav a").forEach(function (link) {
   });
 });
 
+// Komentar: Fungsi untuk menampilkan notifikasi
 function showNotification(message) {
   const notification = document.getElementById("notification");
   const notificationMessage = document.getElementById("notification-message");
@@ -29,25 +30,38 @@ function showNotification(message) {
   }, 3000);
 }
 
-document.querySelectorAll(".product-card").forEach((button) => {
-  button.addEventListener("click", function () {
-    const productName = this.getAttribute("data-name");
+// Komentar: Event listener untuk ikon "Tambah ke Keranjang"
+document.addEventListener("click", function(e) {
+  if (e.target.closest(".add-to-cart-icon")) {
+    e.preventDefault();
+    const productCard = e.target.closest(".product-card");
+    const productName = productCard.querySelector(".product-name").textContent;
     showNotification(`${productName} berhasil ditambahkan ke keranjang`);
-  });
+    
+    e.target.closest(".add-to-cart-icon").classList.add("added");
+    setTimeout(() => {
+      e.target.closest(".add-to-cart-icon").classList.remove("added");
+    }, 500);
+  }
 });
+
 function addToCart(productId, productName, productPrice) {
+  // Komentar: Di sini Anda dapat menambahkan logika untuk menyimpan produk ke keranjang
+  // Misalnya, menyimpan ke localStorage atau mengirim ke server
+  
   showNotification(`${productName} berhasil ditambahkan ke keranjang`);
 }
 
-// Event listener untuk tombol "Tambah ke Keranjang"
+// Komentar: Event listener untuk tombol "Tambah ke Keranjang" pada kartu produk
 document.addEventListener("DOMContentLoaded", function () {
-  const addToCartButtons = document.querySelectorAll(".product-card");
-  addToCartButtons.forEach((button) => {
-    button.addEventListener("click", function (event) {
+  const productCards = document.querySelectorAll(".product-card");
+  productCards.forEach(function(card) {
+    const productId = card.dataset.id;
+    const productName = card.querySelector(".product-name").textContent;
+    const productPrice = card.querySelector(".product-price").textContent;
+    
+    card.querySelector(".add-to-cart-icon").addEventListener("click", function (event) {
       event.preventDefault();
-      const productId = this.getAttribute("data-id");
-      const productName = this.getAttribute("data-name");
-      const productPrice = this.getAttribute("data-price");
       addToCart(productId, productName, productPrice);
     });
   });

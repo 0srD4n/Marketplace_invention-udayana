@@ -28,6 +28,7 @@ body.dark-mode {
 * {
   box-sizing: border-box;
   border: none;
+  text-decoration: none;
   margin: 0;
   top: 0;
   left: 0;
@@ -50,7 +51,7 @@ h2 {
   display: flex;
 }
 
-.hero > div {
+.hero>div {
   width: 50%;
   height: 100%;
   align-content: center;
@@ -73,7 +74,7 @@ h2 {
   width: 85%;
   height: 3rem;
   margin-top: 2rem;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .search-bar input {
@@ -283,7 +284,7 @@ aside .title p i {
   color: var(--listprice);
 }
 
-.hot-deals-countdown .countdown > *:not(.separator) {
+.hot-deals-countdown .countdown>*:not(.separator) {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -299,45 +300,6 @@ aside .title p i {
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-}
-
-.product-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 14rem 14rem;
-  gap: 2rem;
-}
-
-.product-card {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.1);
-}
-
-.product-card .product-image {
-  position: relative;
-  width: 100%;
-  height: 70%;
-  background-color: #ddd;
-}
-
-.product-card:hover .product-image::after {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-.product-card:hover .product-image {
-  filter: brightness(0.8);
-}
-
-.product-card .product-image {
-  transition: filter 0.3s ease;
-}
-
-.product-card .product-caption {
-  padding: 1rem;
 }
 
 .feed .section-title {
@@ -377,23 +339,23 @@ aside .title p i {
 }
 
 /* container product  */
+/* Kontainer utama */
 .container-box {
   width: 100%;
   overflow-x: auto;
   padding: 10px 0;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
-}
-
-.container-box::-webkit-scrollbar {
-  display: none;
-}
-
-.container-box {
   text-transform: capitalize;
   scroll-behavior: smooth;
 }
 
+/* Sembunyikan scrollbar untuk WebKit browsers */
+.container-box::-webkit-scrollbar {
+  display: none;
+}
+
+/* Daftar item dalam kontainer */
 .container-box ul {
   display: flex;
   gap: 1rem;
@@ -402,6 +364,7 @@ aside .title p i {
   list-style: none;
 }
 
+/* Item individu dalam daftar */
 .container-box ul a {
   scroll-snap-align: start;
   width: 100%;
@@ -411,54 +374,105 @@ aside .title p i {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-decoration: center;
+  text-decoration: none;
   color: inherit;
   background-color: #d8d8d8;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
+/* Efek hover pada item */
 .container-box ul a:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
+/* Teks dalam item */
 .container-box ul a span {
-  margin-bottom: 2px;
+  margin-top: 8px;
 }
 
-/* fill object */
+/* Ikon Material Symbols */
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings: "FILL"0, "wght"400, "GRAD"0, "opsz"24;
 }
 
+/* Ukuran ikon dalam item */
 .container-box ul a .material-symbols-outlined {
   font-size: 40px;
 }
 
+/* Kontainer gadget */
 .container-gadget {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.container-gadget * {
+/* Item dalam kontainer gadget */
+.container-gadget>* {
   width: 80%;
-  place-self: center;
 }
 
-/* kayanya kita gak perlu logic cart dah. riber njir */
-/* oh, iya gausah wes */
+.gadget-card img {
+  object-fit: cover;
+}
 
-/* phone mode */
+
 @media screen and (max-width: 720px) {
-  /* Gaya untuk tombol "Tambah ke Keranjang" pada mode ponsel */
+  .container-box {
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  .categories h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .container-box ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    height: auto;
+  }
+
+  .container-box ul a {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 1.25rem;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .container-box ul a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .container-box ul a .material-symbols-outlined {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .container-box ul a span {
+    text-align: center;
+  }
+
 
   .add-to-cart-icon {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    background-color: var(--primary);
-    color: white;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -472,7 +486,7 @@ aside .title p i {
   }
 
   .add-to-cart-icon:hover {
-    background-color: #ff4a9e;
+    background-color: #ffffff;
     transform: scale(1.1);
   }
 
@@ -489,9 +503,11 @@ aside .title p i {
     0% {
       transform: scale(1);
     }
+
     50% {
       transform: scale(1.2);
     }
+
     100% {
       transform: scale(1);
     }
@@ -542,6 +558,7 @@ aside .title p i {
     left: 10px;
     margin-top: 50px;
   }
+
   .hero .search-bar {
     display: inline-block;
   }
@@ -836,33 +853,6 @@ aside .title p i {
     font-size: 18px;
   }
 
-  /* kategori produk */
-  .categories {
-    padding: 1rem;
-    height: 100%;
-  }
-
-  .categories h2 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .container-box ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 100%;
-  }
-
-  .container-box ul a {
-    width: calc(50% - 0.5rem);
-    font-size: 16px;
-    padding: 1rem 0;
-  }
-
-  .container-box ul a .material-symbols-outlined {
-    font-size: 30px;
-  }
 
   /* mid aside */
   aside {
@@ -967,6 +957,7 @@ aside .title p i {
     opacity: 0;
     transition: all 0.3s ease;
   }
+
   .mobile-nav,
   .menu-overlay,
   .menu-backdrop {
@@ -1305,3 +1296,5 @@ footer .block-logo h5 {
 .notification i {
   margin-right: 10px;
 }
+
+/* Gaya untuk ikon profil pengguna */

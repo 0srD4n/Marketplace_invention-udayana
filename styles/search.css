@@ -34,6 +34,14 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.hero .carousel .carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.5s ease;
+}
+
 .hero .carousel .carousel-indicators {
   display: flex;
   gap: 0.5rem;
@@ -41,6 +49,7 @@
   left: 50%;
   bottom: 20px;
   transform: translateX(-50%);
+  z-index: 10;
 }
 
 .hero .carousel .carousel-indicators .dot {
@@ -50,6 +59,7 @@
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .hero .carousel .carousel-indicators .dot.active {
@@ -119,7 +129,7 @@ aside .section-title {
   transition: height 0.3s ease;
 }
 
-.filter-accordion-btn.active + .filter-accordion-items {
+.filter-accordion-btn.active+.filter-accordion-items {
   height: auto;
   padding: 0.5rem 0;
 }
@@ -136,7 +146,7 @@ aside .section-title {
   margin-bottom: 2rem;
 }
 
-.search-input {
+.search-option .search-input {
   width: 50%;
   display: flex;
   justify-content: space-between;
@@ -148,19 +158,19 @@ aside .section-title {
   transition: all 0.3s ease;
 }
 
-.search-input:focus-within {
+.search-option .search-input:focus-within {
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.484);
 }
 
-.search-input input {
+.search-option .search-input input {
   width: 100%;
   border: none;
   outline: none;
   font-size: 1rem;
 }
 
-.search-input button {
+.search-option .search-input button {
   background: none;
   border: none;
   cursor: pointer;
@@ -196,23 +206,15 @@ aside .section-title {
 .product-card .product-image {
   position: relative;
   width: 100%;
-  padding-top: 100%;
-  background-color: #f8f9fa;
+  height: 200px;
   overflow: hidden;
-}
-
-.product-card .product-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   transition: transform 0.3s ease;
+  object-fit: cover;
+  object-position: center;
 }
 
-.product-card:hover .product-image img {
-  transform: scale(1);
+.product-card:hover .product-image {
+  transform: scale(1.2);
 }
 
 .product-card .product-caption {
@@ -263,7 +265,7 @@ aside .section-title {
     order: 1;
   }
 
-  .search-input {
+  .search-option .search-input {
     width: 100%;
   }
 
@@ -338,9 +340,11 @@ aside .section-title {
     padding: 1rem;
     border-bottom: 1px solid #eee;
   }
+
   .desktop-filters {
     display: none;
   }
+
   .product-card .product-caption .product-price {
     font-weight: 500;
     font-size: 0.9rem;
@@ -352,7 +356,15 @@ aside .section-title {
     display: none;
   }
 }
+
 .filter-accordion label {
   width: 100%;
   margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .search-option .search-input {
+    visibility: visible;
+    /* Menampilkan input pencarian pada layar kecil */
+  }
 }
