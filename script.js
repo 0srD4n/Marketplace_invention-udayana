@@ -32,3 +32,19 @@ document.querySelectorAll(".menu-overlay nav a").forEach(function (link) {
     toggleMobileMenu();
   });
 });
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  document.documentElement.classList.toggle("dark-mode");
+  const darkIcon = document.getElementById("darkIcon");
+  const lightIcon = document.getElementById("lightIcon");
+  if (document.body.classList.contains("dark-mode")) {
+    darkIcon.style.display = "none";
+    lightIcon.style.display = "inline-block";
+  } else {
+    darkIcon.style.display = "inline-block";
+    lightIcon.style.display = "none";
+  }
+}
+
+// Event listener untuk tombol toggle
+document.getElementById("toggleMode").addEventListener("click", toggleDarkMode);

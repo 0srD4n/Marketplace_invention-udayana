@@ -1,53 +1,65 @@
-form {
+/* Gaya umum untuk form */
+.buyer-form {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
   gap: 2rem;
 }
 
+/* Gaya untuk bagian tinjauan keranjang */
 .cart-overview {
   width: 60%;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .cart-overview .section-description {
-  margin-top: -2rem;
+  margin-top: -1rem;
 }
 
 .cart-overview .cart-list {
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
+  max-height: 40vh;
+  overflow-y: auto;
 }
 
+/* Gaya untuk produk dalam keranjang */
 .product {
-  height: 200px;
   display: flex;
-  gap: 4rem;
-  padding-left: 2rem;
+  gap: 2rem;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .product .product-image {
-  width: 30%;
+  width: 100px;
+  height: 100px;
   background-color: #ddd;
+  border-radius: 5px;
 }
 
 .product .product-detail {
-  width: 50%;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-detail .product-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  margin-bottom: auto;
 }
 
 .product-detail .product-bought {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .product-bought .product-price {
@@ -59,55 +71,204 @@ form {
   font-weight: 600;
 }
 
-.cart-overview .input-div {
-  height: 4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1rem;
+/* Gaya untuk input div */
+.input-div {
+  margin-bottom: 1.5rem;
 }
 
-.cart-overview .input-div h4 {
+.input-div h4 {
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
+.input-div label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.input-div input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+/* Gaya untuk form pembayaran */
 .payment-form {
   width: 40%;
 }
 
 .section-title {
   font-size: 1.5rem;
-  line-height: 2;
+  margin-bottom: 0.5rem;
 }
 
 .section-description {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  color: #666;
 }
 
 .buyer-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .payment-form .buyer-form .input-div {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .payment-form .buyer-form input {
   height: 2.5rem;
   width: 100%;
-  border: 2px solid black;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.payment-form .buyer-form input:focus {
+  border-color: var(--primary);
+  outline: none;
 }
 
 .payment-form .buyer-form .confirm-btn {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   width: 100%;
-  height: 2.5rem;
+  height: 3rem;
   text-transform: uppercase;
   background-color: var(--primary);
-  border: 1px solid black;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-form .buyer-form .confirm-btn:hover {
+  background-color: darken(var(--primary), 10%);
+}
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .cart-overview,
+  .payment-form {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .section-description {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .cart-list .product {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .cart-list .product-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  .cart-list .product-detail {
+    width: calc(100% - 80px);
+    text-align: left;
+  }
+.cart-list .product-title {
+  margin: 10px;
+}
+.cart-list .product-quantity{
+  font-size: smaller;
+  margin-top:20px;
+}
+  .input-div {
+    margin-bottom: 0.8rem;
+  }
+
+  .payment-form .buyer-form input {
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .payment-form .buyer-form .confirm-btn {
+    height: 3rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Menambahkan ruang antara bagian cart overview dan payment form */
+  .cart-overview {
+    margin-bottom: 2rem;
+  }
+  
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cart-overview,
+.payment-form {
+  animation: fadeIn 0.5s ease-out;
+}
+
+input[type="radio"] + label {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+input[type="radio"]:hover + label {
+  color: var(--primary);
+}
+
+input:focus,
+button:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Pesan error styling */
+.error-message {
+  color: #ff0000;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Loading indicator untuk tombol konfirmasi */
+.confirm-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.confirm-btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -56,6 +56,14 @@ header {
   margin-bottom: 2rem;
 }
 
+header .logo {
+	display: flex;
+	gap: 0.5rem;
+	color: black;
+	font-weight: 700;
+	text-decoration: none;
+}
+
 header .icon {
   height: 100%;
   font-size: 2rem;
@@ -63,8 +71,9 @@ header .icon {
 
 nav {
   display: flex;
-  margin-right: auto;
-  gap: 1rem;
+	align-items: center;
+  gap: 2rem;
+	flex-grow: 1;
 }
 
 nav a {
@@ -80,8 +89,39 @@ nav a {
 }
 
 .user-nav>* {
+	color: black;
   display: block;
   font-size: 1.25rem;
+}
+
+nav .search-input {
+	width: 30%;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 2rem;
+  border: 2px solid var(--secondary);
+  border-radius: 9999px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+	margin-left: auto;
+}
+
+nav .search-input:focus-within {
+  border-color: var(--primary);
+}
+
+nav .search-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+nav .search-input button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
 }
 
 @media screen and (max-width: 768px) {
