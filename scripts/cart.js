@@ -1,21 +1,7 @@
 import products from "../data/product.js";
 
 $(document).ready(function () {
-  $(".quantity-btn").click(function () {
-    var input = $(this).siblings(".quantity-input");
-    var value = parseInt(input.val());
-    if ($(this).text() === "+") {
-      input.val(value + 1);
-    } else if (value > 1) {
-      input.val(value - 1);
-    }
-  });
-
-  $(".remove-item").click(function () {
-    $(this).closest(".cart-item").remove();
-  });
-});
-$(document).ready(function () {
+  // Fungsi untuk memperbarui keranjang belanja
   function updateCart() {
     const cartItemsDIV = $("#cart-items");
     cartItemsDIV.empty();
@@ -24,14 +10,14 @@ $(document).ready(function () {
 
     products.forEach((item) => {
       const cartItemDIV = $(`
-          <div class="cart-item">
+          <div class="cart-item" data-id="${item.id}">
             <img src="${item.image}" alt="${item.name}" />
             <div class="item-details">
               <div class="item-name">${item.name}</div>
               <div class="item-price">Rp ${item.price.toLocaleString()}</div>
               <div class="item-quantity">
                 <button class="quantity-btn minus">-</button>
-                <input type="number" class="quantity-input" value="1" min="1" />
+                <input type="number" class="quantity-input" value="${item.quantity}" min="1" />
                 <button class="quantity-btn plus">+</button>
               </div>
             </div>
@@ -50,7 +36,7 @@ $(document).ready(function () {
   $(document).on("click", ".quantity-btn", function () {
     const $input = $(this).siblings(".quantity-input");
     const id = $(this).closest(".cart-item").data("id");
-    const item = cartItems.find((item) => item.id === id);
+    const item = products.find((item) => item.id === id);
 
     if ($(this).hasClass("plus")) {
       item.quantity++;
@@ -58,21 +44,25 @@ $(document).ready(function () {
       item.quantity--;
     }
 
+    $input.val(item.quantity);
     updateCart();
   });
 
   $(document).on("click", ".remove-item", function () {
     const id = $(this).closest(".cart-item").data("id");
-    const index = cartItems.findIndex((item) => item.id === id);
+    const index = products.findIndex((item) => item.id === id);
 
     if (index !== -1) {
-      cartItems.splice(index, 1);
+      products.splice(index, 1);
       updateCart();
     }
   });
 
+  // Inisialisasi keranjang belanja
   updateCart();
 });
+
+// Fungsi untuk menampilkan notifikasi
 function showNotification(message) {
   const notification = document.getElementById("notification");
   const notificationMessage = document.getElementById("notification-message");
@@ -83,4 +73,3 @@ function showNotification(message) {
     notification.style.display = "none";
   }, 3000);
 }
-
