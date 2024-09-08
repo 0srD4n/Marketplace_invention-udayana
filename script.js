@@ -1,18 +1,3 @@
-$(function () {
-  // setup function time
-  const timeOpened = new Date();
-  setInterval(() => {
-    const date = new Date(); // new ambil object time bang
-    const time = new Intl.DateTimeFormat("id-ID", {
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-    }).format(date);
-    console.log(time);
-    // Set Countdown Hot Deals
-  }, 1000);
-});
-
 // mobile nav
 function toggleMobileMenu() {
   document.querySelector(".menu-overlay").classList.toggle("active");
@@ -32,19 +17,38 @@ document.querySelectorAll(".menu-overlay nav a").forEach(function (link) {
     toggleMobileMenu();
   });
 });
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  document.documentElement.classList.toggle("dark-mode");
-  const darkIcon = document.getElementById("darkIcon");
-  const lightIcon = document.getElementById("lightIcon");
-  if (document.body.classList.contains("dark-mode")) {
-    darkIcon.style.display = "none";
-    lightIcon.style.display = "inline-block";
-  } else {
-    darkIcon.style.display = "inline-block";
-    lightIcon.style.display = "none";
-  }
+
+function showNotification(message) {
+  const notification = document.getElementById("notification");
+  const notificationMessage = document.getElementById("notification-message");
+  notificationMessage.textContent = message;
+  notification.style.display = "block";
+
+  setTimeout(() => {
+    notification.style.display = "none";
+  }, 3000);
 }
 
-// Event listener untuk tombol toggle
-document.getElementById("toggleMode").addEventListener("click", toggleDarkMode);
+document.querySelectorAll(".product-card").forEach((button) => {
+  button.addEventListener("click", function () {
+    const productName = this.getAttribute("data-name");
+    showNotification(`${productName} berhasil ditambahkan ke keranjang`);
+  });
+});
+function addToCart(productId, productName, productPrice) {
+  showNotification(`${productName} berhasil ditambahkan ke keranjang`);
+}
+
+// Event listener untuk tombol "Tambah ke Keranjang"
+document.addEventListener("DOMContentLoaded", function () {
+  const addToCartButtons = document.querySelectorAll(".product-card");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      const productId = this.getAttribute("data-id");
+      const productName = this.getAttribute("data-name");
+      const productPrice = this.getAttribute("data-price");
+      addToCart(productId, productName, productPrice);
+    });
+  });
+});

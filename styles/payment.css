@@ -1,3 +1,8 @@
+.confirm-payment-form {
+  display: flex;
+  gap: 2rem;
+}
+
 /* Gaya umum untuk form */
 .buyer-form {
   width: 100%;
@@ -147,6 +152,7 @@
 .payment-form .buyer-form .confirm-btn:hover {
   background-color: darken(var(--primary), 10%);
 }
+
 @media (max-width: 768px) {
   form {
     flex-direction: column;
@@ -186,13 +192,16 @@
     width: calc(100% - 80px);
     text-align: left;
   }
-.cart-list .product-title {
-  margin: 10px;
-}
-.cart-list .product-quantity{
-  font-size: smaller;
-  margin-top:20px;
-}
+
+  .cart-list .product-title {
+    margin: 10px;
+  }
+
+  .cart-list .product-quantity {
+    font-size: smaller;
+    margin-top: 20px;
+  }
+
   .input-div {
     margin-bottom: 0.8rem;
   }
@@ -212,12 +221,18 @@
   .cart-overview {
     margin-bottom: 2rem;
   }
-  
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cart-overview,
@@ -225,12 +240,12 @@
   animation: fadeIn 0.5s ease-out;
 }
 
-input[type="radio"] + label {
+input[type="radio"]+label {
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-input[type="radio"]:hover + label {
+input[type="radio"]:hover+label {
   color: var(--primary);
 }
 
@@ -269,6 +284,11 @@ button:focus {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -57,11 +57,11 @@ header {
 }
 
 header .logo {
-	display: flex;
-	gap: 0.5rem;
-	color: black;
-	font-weight: 700;
-	text-decoration: none;
+  display: flex;
+  gap: 0.5rem;
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 header .icon {
@@ -71,9 +71,9 @@ header .icon {
 
 nav {
   display: flex;
-	align-items: center;
+  align-items: center;
   gap: 2rem;
-	flex-grow: 1;
+  flex-grow: 1;
 }
 
 nav a {
@@ -81,6 +81,11 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
+  transition: color ease 200ms;
+}
+
+nav a:hover {
+  color: var(--primary);
 }
 
 .user-nav {
@@ -88,14 +93,19 @@ nav a {
   gap: 1.5rem;
 }
 
-.user-nav>* {
-	color: black;
+.user-nav a {
+  color: black;
   display: block;
   font-size: 1.25rem;
+  transition: color ease 200ms;
+}
+
+.user-nav a:hover {
+  color: var(--primary);
 }
 
 nav .search-input {
-	width: 30%;
+  width: 30%;
   display: flex;
   gap: 1rem;
   padding: 0.5rem 2rem;
@@ -103,7 +113,7 @@ nav .search-input {
   border-radius: 9999px;
   background-color: #fff;
   transition: all 0.3s ease;
-	margin-left: auto;
+  margin-left: auto;
 }
 
 nav .search-input:focus-within {
@@ -260,7 +270,6 @@ nav .search-input button {
 }
 
 @media screen and (min-width: 721px) {
-
   .mobile-nav,
   .menu-overlay,
   .menu-backdrop {

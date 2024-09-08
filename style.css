@@ -323,23 +323,6 @@ aside .title p i {
   background-color: #ddd;
 }
 
-.product-card .product-image::after {
-  content: "Add to cart";
-  position: absolute;
-  width: 60%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0.85);
-  text-transform: uppercase;
-  font-size: 1.25rem;
-  text-align: center;
-  padding: 1rem;
-  border: 2px solid black;
-  background-color: rgba(255, 255, 255, 0.8);
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
 .product-card:hover .product-image::after {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
@@ -380,6 +363,10 @@ aside .title p i {
   height: 100%;
   aspect-ratio: 1 / 1;
   font-size: 1.25rem;
+}
+
+.Top-tech {
+  margin-bottom: 4rem;
 }
 
 /* UTILITY CLASSES */
@@ -448,14 +435,121 @@ aside .title p i {
   font-size: 40px;
 }
 
+.container-gadget {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-gadget * {
+  width: 80%;
+  place-self: center;
+}
+
+/* kayanya kita gak perlu logic cart dah. riber njir */
+/* oh, iya gausah wes */
+
 /* phone mode */
 @media screen and (max-width: 720px) {
+  /* Gaya untuk tombol "Tambah ke Keranjang" pada mode ponsel */
+
+  .add-to-cart-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .add-to-cart-icon:hover {
+    background-color: #ff4a9e;
+    transform: scale(1.1);
+  }
+
+  .add-to-cart-icon i {
+    transition: transform 0.3s ease;
+  }
+
+  .add-to-cart-icon:active i {
+    transform: scale(0.8);
+  }
+
+  /* Animasi ketika produk ditambahkan ke keranjang */
+  @keyframes addToCartAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .add-to-cart-icon.added {
+    animation: addToCartAnimation 0.5s ease;
+  }
+
+  /* Penyesuaian tata letak produk untuk mode ponsel */
+  .product-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .product-caption {
+    padding: 10px;
+    background-color: white;
+  }
+
+  .product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .product-price {
+    color: var(--primary);
+    font-weight: 500;
+  }
+
+  /* Komentar: Gaya untuk tampilan produk yang lebih elegan pada mode ponsel */
+  .notification {
+    top: 50px;
+    left: 10px;
+    margin-top: 50px;
+  }
   .hero .search-bar {
     display: inline-block;
   }
+
   .hero .search-bar input {
     width: 100%;
   }
+
   .footer-container {
     flex-direction: column;
   }
@@ -495,6 +589,7 @@ aside .title p i {
   .social-icons {
     justify-content: center;
   }
+
   .container-gadget {
     grid-template-columns: 1fr;
   }
@@ -847,13 +942,31 @@ aside .title p i {
   .gadget-price {
     font-size: 0.9rem;
   }
-  .hero  .search-bar button {
+
+  .hero .search-bar button {
     width: 100%;
-    margin:20px 0px;
+    margin: 20px 0px;
     align-items: center;
   }
 }
+
 @media screen and (min-width: 721px) {
+  .product-card .product-image::after {
+    content: "Add to cart";
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
   .mobile-nav,
   .menu-overlay,
   .menu-backdrop {
@@ -878,6 +991,7 @@ aside .title p i {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
+
 .footer-end {
   background-color: transparent;
   color: #fff;
@@ -958,6 +1072,7 @@ aside .title p i {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -974,15 +1089,8 @@ aside .title p i {
   align-items: center;
 }
 
-.Top-tech {
-  width: 100%;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .Top-tech .section-title {
+  padding-left: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -1061,11 +1169,13 @@ aside .title p i {
   opacity: 1;
   transform: translateX(5px);
 }
+
 .footer-section h6 {
   color: black;
   margin-bottom: 10px;
   font-size: 15px;
 }
+
 .hero {
   display: flex;
   width: 100%;
@@ -1144,6 +1254,7 @@ aside .title p i {
 .gallery-image:hover {
   transform: scale(1.05);
 }
+
 footer .block-logo {
   display: block;
   height: 100%;
@@ -1162,10 +1273,35 @@ footer .block-logo h5 {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notification p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.notification i {
+  margin-right: 10px;
 }
