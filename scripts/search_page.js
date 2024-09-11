@@ -80,7 +80,7 @@ function showNotification(message) {
 
 
 
-import products from "/data/product.js";
+import products from "data/product.js";
 
 $(document).ready(function () {
   $(".quantity-btn").click(function () {

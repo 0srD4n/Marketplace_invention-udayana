@@ -1,11 +1,11 @@
-import products from "/data/product.js";
+import products from "data/product.js";
 
 
 function showCarousel() {
   const carouselImages = [
-    "/media/ACER LAPTOP NITRO AN515-58-55E6.jpg",
-    "/media/MSI Modern 14 C12MO.png",
-    "/media/ADVAN Laptop Workplus.jpeg"
+    "media/ACER LAPTOP NITRO AN515-58-55E6.jpg",
+    "media/MSI Modern 14 C12MO.png",
+    "media/ADVAN Laptop Workplus.jpeg"
   ];
   let currentIndex = 0;
 
@@ -33,7 +33,7 @@ $(function () {
 
   products.forEach((product) => {
     const card = $("<div>").addClass("product-card");
-    const link = $("<a>").attr("href", "/pages/product.html").addClass("product-link").css("text-decoration", "none");
+    const link = $("<a>").attr("href", "pages/product.html").addClass("product-link").css("text-decoration", "none");
     const image = $("<img>").addClass("product-image").attr("src", product.image);
     const caption = $("<div>").addClass("product-caption");
     const name = $("<h4>").addClass("product-name").text(product.name);
