@@ -6,7 +6,7 @@ const products = [
     rating: 4.9,
     soldCount: 480,
     isSold: false,
-    image: "../media/MSI Modern 14 C12MO.png",
+    image: "/media/MSI Modern 14 C12MO.png",
     quantity: 1,
   },
   {
@@ -16,7 +16,7 @@ const products = [
     rating: 4.8,
     soldCount: 1929,
     isSold: false,
-    image: "../media/Fantech ATOM96 MK890.png",
+    image: "/media/Fantech ATOM96 MK890.png",
     quantity: 1,
   },
   {
@@ -26,7 +26,7 @@ const products = [
     rating: 5,
     soldCount: 389,
     isSold: false,
-    image: "../media/ADVAN Laptop Workplus.jpeg",
+    image: "/media/ADVAN Laptop Workplus.jpeg",
     quantity: 1,
   },
   {
@@ -36,7 +36,7 @@ const products = [
     rating: 4.9,
     soldCount: 129,
     isSold: false,
-    image: "../media/Memory KYO STYGIAN DDR4.jpg",
+    image: "/media/Memory KYO STYGIAN DDR4.jpg",
     quantity: 1,
   },
   {
@@ -46,7 +46,7 @@ const products = [
     rating: 4.8,
     soldCount: 111,
     isSold: false,
-    image: "../media/SSD M2 NVME Kaizen 1TB.jpg",
+    image: "/media/SSD M2 NVME Kaizen 1TB.jpg",
     quantity: 1,
   },
   {
@@ -56,7 +56,7 @@ const products = [
     rating: 4.7,
     soldCount: 144,
     isSold: false,
-    image: "../media/NOVA V4 Lightweight Wireless Gaming Mouse.jpg",
+    image: "/media/NOVA V4 Lightweight Wireless Gaming Mouse.jpg",
     quantity: 1,
   },
   {
@@ -66,7 +66,7 @@ const products = [
     rating: 4.8,
     soldCount: 142,
     isSold: false,
-    image: "../media/Lenovo V14 G3.jpg",
+    image: "/media/Lenovo V14 G3.jpg",
     quantity: 1,
   },
   {
@@ -76,7 +76,7 @@ const products = [
     rating: 4.8,
     soldCount: 169,
     isSold: false,
-    image: "../media/ACER LAPTOP NITRO AN515-58-55E6.jpg",
+    image: "/media/ACER LAPTOP NITRO AN515-58-55E6.jpg",
     quantity: 1,
   },
 ];

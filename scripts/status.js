@@ -73,7 +73,7 @@ document.querySelectorAll(".menu-overlay nav a").forEach(function (link) {
     toggleMobileMenu();
   });
 });
-import products from "../data/product.js";
+import products from "/data/product.js";
 
 $(document).ready(function () {
   $(".quantity-btn").click(function () {
